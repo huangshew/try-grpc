@@ -19,3 +19,12 @@ Server implementation is at class `t.r.y.ServerApp`.
 ### hello-world-client
 
 Run the main method. Or try [BloomRPC](https://github.com/uw-labs/bloomrpc)
+
+
+## Maven Protocol Buffers Plugin 
+
+https://www.xolstice.org/protobuf-maven-plugin/
+
+Try in the future
+
+
