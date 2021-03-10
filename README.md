@@ -7,6 +7,8 @@
   * [grpc-spring-boot-starter](#grpc-spring-boot-starter)
      * [Maven Protocol Buffers Plugin](#maven-protocol-buffers-plugin)
   * [TODO](#TODO)
+  
+***
 
 ## Hello World
 
@@ -43,15 +45,38 @@ The package is [here](https://www.xolstice.org/protobuf-maven-plugin/). Notes be
 2. If no explicit `java_package option` is given in the .proto file, then by default the proto package (specified using the `package` keyword in the .proto file) will be used.
 3. `mvn clean protobuf:compile protobuf:compile-custom` generates source code in `target/generated-sources/protobuf/*`.
 
+### Interceptors
+
+- implements a class X the interface `ServerInterceptor`
+
+```java
+public class X implements ServerInterceptor {
+
+    @Override
+    public <ReqT, RespT> Listener<ReqT> interceptCall(
+            final ServerCall<ReqT, RespT> serverCall,
+            final Metadata metadata,
+            final ServerCallHandler<ReqT, RespT> serverCallHandler) {
+
+        // DO MY THING
+        return serverCallHandler.startCall(serverCall, metadata);
+    }
+
+}
+```
+
+- To use X globally, adds annotation `@GrpcGlobalServerInterceptor` on an instance of X
+- To use X locally for specific services, adds annotation `@GrpcService(interceptors = X.class)` on the service impl
+
+
 ***
 
 ## TODO
 - Server
-    1. Global Interceptor
     2. Exception Handling
     3. Security
     4. Use of `Context.key`
-    5. Use of `stream`
+    5. Use of [`stream`](https://grpc.io/docs/languages/java/basics/#server-side-streaming-rpc-1)
     6. RxJava
 - Client
 
