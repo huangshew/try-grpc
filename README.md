@@ -1,6 +1,12 @@
 # try-grpc
 
-[[_TOC_]]
+## Table of Contents
+  * [Hello World](#hello-world)
+     * [hello-world-server](#hello-world-server)
+     * [hello-world-client](#hello-world-client)
+  * [grpc-spring-boot-starter](#grpc-spring-boot-starter)
+     * [Maven Protocol Buffers Plugin](#maven-protocol-buffers-plugin)
+  * [TODO](#TODO)
 
 ## Hello World
 
@@ -36,13 +42,17 @@ The package is [here](https://www.xolstice.org/protobuf-maven-plugin/). Notes be
 1. proto files are under `src/main/proto`.
 2. If no explicit `java_package option` is given in the .proto file, then by default the proto package (specified using the `package` keyword in the .proto file) will be used.
 3. `mvn clean protobuf:compile protobuf:compile-custom` generates source code in `target/generated-sources/protobuf/*`.
-4. The use of `repeated`.
 
-TODO
-1. Global Interceptor
-2. Exception Handling
-3. RxJava
+***
 
-
+## TODO
+- Server
+    1. Global Interceptor
+    2. Exception Handling
+    3. Security
+    4. Use of `Context.key`
+    5. Use of `stream`
+    6. RxJava
+- Client
 
 
