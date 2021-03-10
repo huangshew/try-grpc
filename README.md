@@ -1,5 +1,7 @@
 # try-grpc
 
+[[_TOC_]]
+
 ## Hello World
 
 A starter project created on 20210301, following [
@@ -21,10 +23,26 @@ Server implementation is at class `t.r.y.ServerApp`.
 Run the main method. Or try [BloomRPC](https://github.com/uw-labs/bloomrpc)
 
 
-## Maven Protocol Buffers Plugin 
+## grpc-spring-boot-starter
 
-https://www.xolstice.org/protobuf-maven-plugin/
+Trying `Spring Boot starter module for gRPC framework` on 20210309, following [
+Getting Started
+](https://yidongnan.github.io/grpc-spring-boot-starter/en/server/getting-started.html).
 
-Try in the future
+### Maven Protocol Buffers Plugin 
+
+The package is [here](https://www.xolstice.org/protobuf-maven-plugin/). Notes below:
+
+1. proto files are under `src/main/proto`.
+2. If no explicit `java_package option` is given in the .proto file, then by default the proto package (specified using the `package` keyword in the .proto file) will be used.
+3. `mvn clean protobuf:compile protobuf:compile-custom` generates source code in `target/generated-sources/protobuf/*`.
+4. The use of `repeated`.
+
+TODO
+1. Global Interceptor
+2. Exception Handling
+3. RxJava
+
+
 
 

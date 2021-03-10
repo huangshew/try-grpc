@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "t.r.y.sb.grpc.lib";
+option java_outer_classname = "GroupSplit";
+
+service GroupSplitService {
+    rpc split(GroupSplitRequest) returns (GroupSplitReply);
+}
+
+message GroupSplitRequest {
+    repeated uint32 user_id = 1;
+    uint32 total_groups = 100;
+}
+
+message GroupAssignment {
+    uint32 user_id = 1;
+    uint32 assigned_group_id = 2;
+}
+
+message GroupSplitReply {
+    repeated GroupAssignment assignments = 1;
+    uint32 total_groups = 100;
+}
