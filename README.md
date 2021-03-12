@@ -73,11 +73,11 @@ public class X implements ServerInterceptor {
 
 ## TODO
 - Server
-    2. Exception Handling
-    3. Security
-    4. Use of `Context.key`
-    5. Use of [`stream`](https://grpc.io/docs/languages/java/basics/#server-side-streaming-rpc-1)
-    6. RxJava
+    - Exception Handling
+    - Security
+    - Use of `Context.key`
+    - Use of [`stream`](https://grpc.io/docs/languages/java/basics/#server-side-streaming-rpc-1)
+    - RxJava
 - Client
 
 
